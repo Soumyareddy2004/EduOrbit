@@ -1,0 +1,52 @@
+.challenges-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: #fae4e4;
+    background: linear-gradient(to right, #8242f9, #b5d3f2);
+    min-height: 65vh;
+  }
+  
+.flash-card {
+    background: #37253c;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 500px;
+    color: #e4dbdb;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+.flash-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgb(243, 238, 238);
+  }
+
+.flash-card h2 {
+    color: white; /* Make h2 white */
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #f3dada;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.challenges-button {
+    background-color: #61dafb;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.challenges-button:hover {
+    background-color: #007bff;
+    transform: scale(1.05);
+}
