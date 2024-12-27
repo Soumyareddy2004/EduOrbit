@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+orb/config/credentials.json.json
+orb/src/components/ChatBot.jsx
