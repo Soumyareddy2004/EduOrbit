@@ -11,7 +11,7 @@ const MyComponent = () => {
     getData();
   }, []);
 
-  return <div>Check the console for data!</div>;
+  return <div></div>;
 };
 
 export default MyComponent;
