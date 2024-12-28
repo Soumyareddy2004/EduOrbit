@@ -9,6 +9,7 @@ const userRoutes=require('./routes/user.routes');
 const groupRoomRoutes = require('./routes/group.routes');
 connectToDb();
 app.use(cors())
+app.use(cors({ origin: 'https://eduorbit-frontend.onrender.com' }));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
