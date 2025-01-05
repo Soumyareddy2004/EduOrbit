@@ -16,7 +16,7 @@ const Signup = () => {
     };
 
     try {
-      const response = await fetch('https://eduorbit-backend.onrender.com/user/register', {
+      const response = await fetch('https://eduorbit-1.onrender.com/user/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userData),
