@@ -24,7 +24,7 @@ const LoginPage = () => {
 
     try {
       const response = await fetch(
-        `https://eduorbit-backend.onrender.com/user/${isSignup ? 'register' : 'login'}`,
+        `https://eduorbit-1.onrender.com/user/${isSignup ? 'register' : 'login'}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
