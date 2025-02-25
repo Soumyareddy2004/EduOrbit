@@ -16,6 +16,8 @@ const Header = () => {
           <li><Link to="/dashboard">Dashboard</Link></li>
           <li><Link to="/group-room">Group Rooms</Link></li>
           <li><Link to="/progress">Progress</Link></li>
+          <li><Link to="/share">Share</Link></li>
+          
           <li>
             <Link to="/profile">
               <svg

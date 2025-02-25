@@ -6,9 +6,12 @@ import GroupRoomPage from '../pages/GroupRoomPage';
 import ProgressPage from '../pages/ProgressPage.jsx';
 import ChallengesPage from '../pages/ChallengesPage';
 import VideoConferencePage from '../pages/VideoConferencePage';
-import LoginPage from '../pages/LoginPage'; // Enable this import
+import LoginPage from '../pages/LoginPage'; 
 import Signup from '../pages/Signup';
 import ProfilePage from '../pages/ProfilePage';
+import RecommendationPage from '../pages/RecommendationPage'; 
+import Share from '../pages/Share';
+import CGPAPlanner from '../pages/CGPAPlanner';
 
 const AppRoutes = () => {
   return (
@@ -24,6 +27,9 @@ const AppRoutes = () => {
         <Route path="/challenges" element={<ChallengesPage />} />
         <Route path="/video-conference" element={<VideoConferencePage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/recommendation" element={<RecommendationPage />} />
+        <Route path="/share" element={<Share />} />
+        <Route path="/cgpa-planner" element={<CGPAPlanner />} />
       </Routes>
     </Router>
   );

@@ -1,86 +1,17 @@
-/* HomePage.css */
 .home-page {
-  text-align: center;
-  padding: 2rem;
-  background: linear-gradient(to bottom, #18193c, #61dafb);
-  color: white;
-  font-family: 'Arial', sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.home-page h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: rgb(211, 215, 215);
-}
-
-.home-page p {
-  font-size: 1.2rem;
-  color: #d8f5ef;
-  margin: 0 1rem;
-}
-
-/* Add padding to main content for better readability */
-main {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 1rem;
-}
-
-/* Responsive design adjustments */
-@media (max-width: 768px) {
-  .home-page {
-    padding: 1rem;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to bottom, #18193c, #61dafb);
+    color: white;
   }
-
+  
   .home-page h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: rgb(211, 215, 215);
   }
-
+  
   .home-page p {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    color: #d8f5ef;
   }
-
-  main {
-    padding: 0.5rem;
-  }
-}
-
-/* Add responsive styling for other components */
-.ContentComponent, .VideoConferenceComponent, .ChallengesComponent, .Footer {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-  .ContentComponent, .VideoConferenceComponent, .ChallengesComponent, .Footer {
-    padding: 0.5rem;
-  }
-}
-
-/* Enhance button and interactive elements styling */
-button {
-  background-color: #61dafb;
-  color: #18193c;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-  background-color: #50b5d8;
-  transform: scale(1.05);
-}
-
-button:active {
-  transform: scale(0.95);
-}

@@ -6,6 +6,9 @@ import ContentComponent from '../components/ContentComponent';
 
 import VideoConferenceComponent from '../components/VideoConferenceComponent';
 import ChallengesComponent from '../components/ChallengesComponent';
+import RecommendationComponent from "../components/RecommendationComponent";
+import CGPA from "../components/CGPA";
+import ShareC from '../components/ShareC';
 import Footer from '../components/Footer';
 const HomePage = () => {
   return (
@@ -22,6 +25,9 @@ const HomePage = () => {
       {/* <ChatBot /> */}
        {/*Embed the chatbot here*/}
        <ChallengesComponent/>
+       <RecommendationComponent />
+       <CGPA/>
+       <ShareC/>
        <Footer/>
     </div>
   );

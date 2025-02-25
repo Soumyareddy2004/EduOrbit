@@ -3,63 +3,64 @@ import { useNavigate } from 'react-router-dom';
 import './LoginPage.css';
 
 const LoginPage = () => {
-  const [isSignup, setIsSignup] = useState(false); // Toggle between Login and Signup
+  const [isSignup, setIsSignup] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
   const handleToggle = () => {
     setIsSignup(!isSignup);
+    setErrorMessage(''); // Clear errors when toggling
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Prevent page reload on form submit
+    event.preventDefault();
 
-    const userData = {
-      email: email,
-      password: password,
-    };
+    if (!email || !password) {
+      setErrorMessage('Please fill in both email and password.');
+      return;
+    }
 
-   
+    setLoading(true);
 
     try {
       const response = await fetch(
-        `https://eduorbit-1.onrender.com/user/${isSignup ? 'register' : 'login'}`,
+        `http://localhost:4000/user/${isSignup ? 'register' : 'login'}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(userData),
+          body: JSON.stringify({ email, password }),
         }
       );
 
       const data = await response.json();
-      
 
       if (response.ok) {
         if (isSignup) {
           alert(`Account created for ${email}`);
-          navigate('/login'); // Redirect to login after successful signup
+          navigate('/login');
         } else {
-          localStorage.setItem('token', data.token); // Store token in localStorage
-          alert('Login successful');
-          navigate('/home'); // Redirect to home after successful login
+          localStorage.setItem('token', data.token);
+          navigate('/home');
         }
       } else {
-        alert(data.message || (isSignup ? 'Signup failed' : 'Invalid login credentials'));
+        setErrorMessage(data.message || 'An error occurred.');
       }
     } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred. Please try again later.');
+      setErrorMessage('Failed to connect to the server.');
+    } finally {
+      setLoading(false);
     }
   };
 
-
   return (
-    <>
     <div className="login-page">
       <div className="login-form-container">
         <div className="login-form">
           <h2>{isSignup ? 'Sign Up' : 'Log In'}</h2>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
           <form onSubmit={handleSubmit}>
             <input
               type="email"
@@ -75,7 +76,9 @@ const LoginPage = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <button type="submit">{isSignup ? 'Sign Up' : 'Log In'}</button>
+            <button type="submit" disabled={loading}>
+              {loading ? 'Processing...' : isSignup ? 'Sign Up' : 'Log In'}
+            </button>
           </form>
           <p onClick={handleToggle} className="toggle-link">
             {isSignup ? 'Already have an account? Log In' : "Don’t have an account? Sign Up"}
@@ -83,8 +86,7 @@ const LoginPage = () => {
         </div>
       </div>
     </div>
-    </>
   );
 };
 
-export default LoginPage;
+export default LoginPage;

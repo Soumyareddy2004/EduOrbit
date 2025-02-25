@@ -13,10 +13,9 @@ const GroupRoom = () => {
   const [input, setInput] = useState('');
   const navigate = useNavigate();
 
-  // Create a room
   const handleCreateRoom = async () => {
     try {
-      const response = await fetch('https://eduorbit-backend.onrender.com/group', {
+      const response = await fetch('http://localhost:4000/group', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -42,7 +41,7 @@ const GroupRoom = () => {
   // Join a room
   const handleJoinRoom = async () => {
     try {
-      const response = await fetch(`https://eduorbit-backend.onrender.com/group/${groupLink}`);
+      const response = await fetch(`http://localhost:4000/group/${groupLink}`);
       const data = await response.json();
       if (response.ok) {
         setMessages(data.messages);
@@ -60,7 +59,7 @@ const GroupRoom = () => {
   const handleSendMessage = async () => {
     if (input.trim()) {
       try {
-        const response = await fetch(`https://eduorbit-backend.onrender.com/group/${groupLink}/message`, {
+        const response = await fetch(`http://localhost:4000/group/${groupLink}/message`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -89,7 +88,7 @@ const GroupRoom = () => {
     const fileNames = uploadedFiles.map((file) => file.name);
 
     try {
-      const response = await fetch(`https://eduorbit-backend.onrender.com/group/${groupLink}/upload`, {
+      const response = await fetch(`http://localhost:4000/group/${groupLink}/upload`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
