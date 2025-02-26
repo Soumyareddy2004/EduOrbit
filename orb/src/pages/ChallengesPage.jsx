@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ChallengesPage.css";
-import { fetchQuizFromAI } from '../utils/apiUtils';
+// import { fetchQuizFromAI } from '../utils/apiUtils';
 
 const ChallengesPage = () => {
   
