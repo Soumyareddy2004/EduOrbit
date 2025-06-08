@@ -6,8 +6,8 @@ import GroupRoomPage from '../pages/GroupRoomPage';
 import ProgressPage from '../pages/ProgressPage.jsx';
 import ChallengesPage from '../pages/ChallengesPage';
 import VideoConferencePage from '../pages/VideoConferencePage';
-import LoginPage from '../pages/LoginPage'; 
-import Signup from '../pages/Signup';
+// import LoginPage from '../pages/LoginPage'; 
+// import Signup from '../pages/Signup';
 import ProfilePage from '../pages/ProfilePage';
 import RecommendationPage from '../pages/RecommendationPage'; 
 import Share from '../pages/Share';
@@ -17,10 +17,10 @@ const AppRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LoginPage />} /> {/* Redirect to Login by default */}
-        <Route path="/login" element={<LoginPage/>} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} /> {/* Redirect to Login by default */}
+{/*         <Route path="/login" element={<LoginPage/>} />
+        <Route path="/signup" element={<Signup />} /> */}
+        // <Route path="/home" element={<HomePage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/group-room" element={<GroupRoomPage />} />
         <Route path="/progress" element={<ProgressPage />} />
